@@ -90,9 +90,9 @@
 		}
 
 		.toggle {
-
+			padding-top: 1em;
 			display: block;
-			height: 4em;
+			height: 3em;
 			 left: _size(sidebar-width);
 			line-height: 4em;
 			outline: 0;
@@ -102,7 +102,7 @@
 			text-indent: -15em;
 			white-space: nowrap;
 			top: 0;
-			width: 4em;
+			width: 3em;
 			z-index: _misc(z-index-base);
 
 
@@ -117,9 +117,10 @@
 				width: inherit;
 			}
 			svg{
+				padding-top: 1em;
 				fill: _palette(border) ;
 				display: block;
-				height: 4em;
+				height: 3em;
 				//  left: _size(sidebar-width);
 				line-height: 4em;
 				outline: 0;
@@ -129,7 +130,7 @@
 				text-indent: -15em;
 				white-space: nowrap;
 				top: 0;
-				width: 4em;
+				width: 3em;
 				z-index: _misc(z-index-base);
 
 				&:hover {
@@ -164,6 +165,21 @@
 				text-indent: 5em;
 				width: 5em;
 
+				svg{
+					fill: _palette(border) ;
+					display: block;
+					height: 3em;
+					//  left: _size(sidebar-width);
+					line-height: 4em;
+					outline: 0;
+					overflow: hidden;
+					position: absolute;
+					text-align: center;
+					text-indent: -15em;
+					white-space: nowrap;
+					top: 1em;
+					width: 3em;
+				}
 				&:before {
 					font-size: 1.5rem;
 				}
@@ -175,37 +191,27 @@
 		}
 
 		@include breakpoint('<=large') {
-			box-shadow: 0 0 5em 0 rgba(0, 0, 0, 0.175);
-			height: 100%;
-			left: 0;
-			position: fixed;
-			top: 0;
-			z-index: _misc(z-index-base);
-
-			&.inactive {
-				box-shadow: none;
-			}
-
-			> .inner {
-				-webkit-overflow-scrolling: touch;
-				height: 100%;
-				left: 0;
-				overflow-x: hidden;
-				overflow-y: auto;
-				position: absolute;
-				top: 0;
-
-				&:after {
-					content: '';
-					display: block;
-					height: 4em;
-					width: 100%;
-				}
-			}
 
 			.toggle {
 				text-indent: 6em;
 				width: 6em;
+				padding-top: 3em;
+
+				svg{
+					fill: _palette(border) ;
+					display: block;
+					height: 3em;
+					//  left: _size(sidebar-width);
+					line-height: 4em;
+					outline: 0;
+					overflow: hidden;
+					position: absolute;
+					text-align: center;
+					text-indent: -15em;
+					white-space: nowrap;
+					top: 1em;
+					width: 3em;
+				}
 
 				&:before {
 					font-size: 1.5rem;
@@ -218,25 +224,49 @@
 			}
 		}
 
+
 		@include breakpoint('<=small') {
 			.toggle {
-				text-indent: 7.25em;
-				width: 7.25em;
-
+				text-indent: 5.25em;
+				width: 5.25em;
+				padding-top: 3em;
 				&:before {
-					color: _palette(fg);
 					margin-left: calc(-0.125em / 2); 
 					margin-top: calc(-0.5em / 2); 
 					font-size: 1.1rem;
 					z-index: 1;
 				}
 
+				svg{
+					fill: _palette(border) ;
+					display: block;
+					height: 3em;
+					//  left: _size(sidebar-width);
+					line-height: 4em;
+					outline: 0;
+					overflow: hidden;
+					position: absolute;
+					text-align: center;
+					text-indent: -15em;
+					white-space: nowrap;
+					top: 2.2em;
+					width: 3em;
+					
+	
+					&:hover {
+						border-bottom-color: _palette(accent);
+						fill: _palette(accent) ;
+						strong {
+							fill: inherit;
+							
+						}
+					}
+				}
+
 				&:after {
-					background: transparentize(lighten(_palette(fg), 35), 0.25);
-					border-radius: _size(border-radius);
-					content: '';
+					border: 1px solid _palette(border);
 					height: 3.5em;
-					left: 1em;
+					left: 4em;
 					position: absolute;
 					top: 1em;
 					width: 5em;
@@ -244,19 +274,3 @@
 			}
 		}
 	}
-
-	// > * {
-	// 	// border-bottom: solid 2px _palette(border);
-	// 	margin: 0 0 (_size(element-margin) * 1.75) 0;
-	// 	padding: 0 0 (_size(element-margin) * 1.75) 0;
-
-	// 	> :last-child {
-	// 		margin-bottom: 0;
-	// 	}
-
-	// 	&:last-child {
-	// 		border-bottom: 0;
-	// 		margin-bottom: 0;
-	// 		padding-bottom: 0;
-	// 	}
-	// }
