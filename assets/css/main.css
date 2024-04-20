@@ -570,9 +570,6 @@ button:disabled,
   padding-bottom: 1em;
   fill: #808080;
 }
-#header .header_column .header_column_row:hover {
-  fill: #00E6E6;
-}
 #header .header_column .header_column_row #menu_header {
   flex-direction: row;
   display: flex;
@@ -624,6 +621,16 @@ button:disabled,
 }
 #header .header_column .header_column_row #search #query:focus {
   border: 0px solid #808080;
+}
+#header .header_column .header_column_row .header_column_row_column .circle {
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  border-radius: 50%;
+  font-size: 1em;
+  color: #000;
+  text-align: center;
+  background: #00E6E6;
 }
 #header .header_column_row:first-child {
   flex: 70%;

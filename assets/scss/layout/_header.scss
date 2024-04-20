@@ -31,10 +31,6 @@
 			fill: _palette(border);
 
 
-			&:hover{
-				fill: _palette(accent);
-			}
-
 			#menu_header {
 				flex-direction: row;
 				display: flex;
@@ -82,8 +78,6 @@
 				}
 			}
 			
-			
-
 			#search {
 				display: inline-block;
 
@@ -107,8 +101,17 @@
 			}
 
 			.header_column_row_column{
-				
-				
+				.circle {
+					width: 2em;
+					height: 2em;
+					line-height: 2em;
+					border-radius: 50%;
+					font-size: 1em;
+					color: #000;
+					text-align: center;
+					background: _palette(accent)
+				}
+
 			}
 
 		}
