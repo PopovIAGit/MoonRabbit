@@ -111,6 +111,13 @@
 						}
 					}
 		}
+		a#active{
+			color: _palette(accent2) ;
+			strong {
+				color: inherit;
+				
+			}
+		}
 	}
 
 	@include breakpoint("<=xlarge") {

@@ -89,18 +89,25 @@
 					.appendTo($head);
 
 		// Toggle.
-			$('<a href="#sidebar" class="toggle">Toggle</a>')
-				.appendTo($sidebar)
-				.on('click', function(event) {
+		var toggle = $('.toggle')
 
-					// Prevent default.
-						event.preventDefault();
-						event.stopPropagation();
+			toggle.on('click', function(event) {
+				event.preventDefault();
+				event.stopPropagation();
+				$sidebar.toggleClass('inactive');
+			});
+			// $('<a href="#sidebar" class="toggle"><img src="images/menu.svg" alt=""/></a>')
+			// 	.appendTo($sidebar)
+			// 	.on('click', function(event) {
 
-					// Toggle.
-						$sidebar.toggleClass('inactive');
+			// 		// Prevent default.
+			// 			event.preventDefault();
+			// 			event.stopPropagation();
 
-				});
+			// 		// Toggle.
+			// 			$sidebar.toggleClass('inactive');
+
+			// 	});
 
 		// Events.
 
