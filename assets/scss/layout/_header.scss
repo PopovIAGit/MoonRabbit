@@ -101,7 +101,12 @@
 			}
 
 			.header_column_row_column{
+				display: flex;
+				flex-direction: row;
+				margin-left: 1.5em;
+
 				.circle {
+					margin-left: 0.5em;
 					width: 2em;
 					height: 2em;
 					line-height: 2em;
@@ -125,7 +130,8 @@
 	}
 	.header_column_row:last-child:has(> .header_column_row_column) {
 		
-		justify-content: space-evenly;
+		justify-content: right;
+
 	}
 	#menu_inline ul {
 		display: flex;
@@ -172,6 +178,8 @@
 		}
 
 
+
+
 		.header_column {
 			.header_column_row {
 				#menu_header ul {
@@ -183,4 +191,5 @@
 			}
 		}
 	}
+	
 }
