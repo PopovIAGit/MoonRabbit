@@ -25,16 +25,16 @@
 		.header_column_row {
 			display: flex;
 			flex-direction: row;
+			align-items: center;
 			justify-content: right;
 			width: 100%;
 			padding-bottom: 1em;
 			fill: _palette(border);
 
-
 			#menu_header {
 				flex-direction: row;
 				display: flex;
-				
+
 				justify-content: right;
 				list-style: none;
 				align-items: center;
@@ -42,42 +42,59 @@
 
 				ul {
 					flex-direction: row;
-				display: flex;
-				
-				justify-content: right;
-				list-style: none;
-				align-items: center;
-				font-size: 1.1em;
-				
+					display: flex;
+
+					justify-content: right;
+					list-style: none;
+					align-items: center;
+					font-size: 1.1em;
+
 					li:not(:last-child) {
 						margin-right: 2em;
-						
+
 						// стили для каждого элемента списка
 					}
-	
-					
-	
-					a{
+
+					a {
 						color: _palette(border);
 						text-decoration: none;
 						&:hover {
-									border-bottom-color: _palette(accent);
-									color: _palette(accent) ;
-									strong {
-										color: inherit;
-									}
-								}
+							border-bottom-color: _palette(accent);
+							color: _palette(accent);
+							strong {
+								color: inherit;
+							}
+						}
+					}
+				}
+			}
+
+			#menu_login {
+				flex-direction: row;
+				display: flex;
+
+				justify-content: right;
+				font-size: 1.2em;
+				a {
+					color: _palette(border);
+					text-decoration: none;
+					&:hover {
+						border-bottom-color: _palette(accent);
+						color: _palette(accent);
+						strong {
+							color: inherit;
+						}
 					}
 				}
 
-				#loginSVG{
+				#loginSVG {
 					margin-right: 1em;
 					align-self: center;
 					width: 1.5em;
 					height: 1.5em;
 				}
 			}
-			
+
 			#search {
 				display: inline-block;
 
@@ -92,15 +109,13 @@
 					border-radius: 5px;
 					background-color: _palette(bg);
 
-					&:focus  {
+					&:focus {
 						border: 0px solid _palette(border);
 					}
 				}
-
-
 			}
 
-			.header_column_row_column{
+			.header_column_row_column {
 				display: flex;
 				flex-direction: row;
 				margin-left: 1.5em;
@@ -114,11 +129,9 @@
 					font-size: 1em;
 					color: #000;
 					text-align: center;
-					background: _palette(accent)
+					background: _palette(accent);
 				}
-
 			}
-
 		}
 	}
 	.header_column_row:first-child {
@@ -129,9 +142,7 @@
 		flex: 30%;
 	}
 	.header_column_row:last-child:has(> .header_column_row_column) {
-		
 		justify-content: right;
-
 	}
 	#menu_inline ul {
 		display: flex;
@@ -143,25 +154,23 @@
 		li {
 			// стили для каждого элемента списка
 		}
-		a{
+		a {
 			color: black;
 			text-decoration: none;
-			
+
 			font-size: 1.2em;
 			&:hover {
-						border-bottom-color: _palette(accent);
-						color: _palette(accent2) ;
-						strong {
-							color: inherit;
-							
-						}
-					}
+				border-bottom-color: _palette(accent);
+				color: _palette(accent2);
+				strong {
+					color: inherit;
+				}
+			}
 		}
-		a#active{
-			color: _palette(accent2) ;
+		a#active {
+			color: _palette(accent2);
 			strong {
 				color: inherit;
-				
 			}
 		}
 	}
@@ -173,23 +182,54 @@
 	@include breakpoint("<=small") {
 		padding-top: 3em;
 
-		#menu_inline{
+		#menu_inline {
 			display: none;
 		}
-
-
-
-
 		.header_column {
 			.header_column_row {
-				#menu_header ul {
-					li:not(:last-child) {
-						margin-right: 0.5em;
-						// стили для каждого элемента списка
+				#menu_header {
+					ul {
+						font-size: 0.9em;
+						li:not(:last-child) {
+							margin-right: 0.5em;
+							// стили для каждого элемента списка
+						}
 					}
-			}
+				}
+
+				#menu_login {
+					ul {
+						font-size: 0.8em;
+						li:not(:last-child) {
+							margin-right: 0.5em;
+							// стили для каждого элемента списка
+						}
+					}
+				}
 			}
 		}
 	}
-	
+
+	@include breakpoint("<=xsmall") {
+		.header_column {
+			flex-direction: column;
+			.header_column_row {
+				#menu_header {
+					ul {
+						display: none;
+					}
+				}
+
+				#menu_login {
+					ul {
+						font-size: 0.9em;
+						li:not(:last-child) {
+							margin-right: 0.5em;
+							// стили для каждого элемента списка
+						}
+					}
+				}
+			}
+		}
+	}
 }

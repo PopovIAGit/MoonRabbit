@@ -14,8 +14,8 @@
 
 		.title-on-image {
 			position: absolute;
-			bottom: -0.8em;
-			right:  -0.4em;
+			bottom: -0.55em;
+			right:  -0.36em;
 			opacity: 0.7;
 			text-align: right;
 		}
@@ -70,7 +70,7 @@
 			@include breakpoint('<=xsmall') {
 			
 				.image {
-					max-height: 35vh;
+					max-height: 50vh;
 				}
 			}
 		}
