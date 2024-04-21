@@ -4,6 +4,7 @@
 @import 'libs/vendor';
 @import 'libs/breakpoints';
 @import 'libs/html-grid';
+@import 'fontawesome-all.min.css';
 
 // Breakpoints.
 
@@ -33,3 +34,4 @@
 @import 'layout/sidebar';
 @import 'layout/header';
 @import 'layout/main';
+@import 'layout/banner';

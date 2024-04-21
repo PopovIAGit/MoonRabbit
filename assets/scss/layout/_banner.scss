@@ -1,0 +1,77 @@
+///
+/// Editorial by HTML5 UP
+/// html5up.net | @ajlkn
+/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+///
+
+/* Banner */
+
+	#banner {
+		padding: 0;
+		display: flex;
+		height: 30em;
+		position: relative;
+
+		.title-on-image {
+			position: absolute;
+			bottom: -0.8em;
+			right:  -0.4em;
+			opacity: 0.7;
+			text-align: right;
+		}
+
+		.content {
+			flex-grow: 1;
+			flex-shrink: 1;
+			width: 100%;
+		}
+
+		.image {
+			flex-grow: 0;
+			flex-shrink: 0;
+			display: block;
+			margin: 0 0 0 0;
+			width: 100%;
+			height: 100%;
+
+			img {
+				height: 100%;
+				-moz-object-fit: cover;
+				-webkit-object-fit: cover;
+				-ms-object-fit: cover;
+				object-fit: cover;
+				-moz-object-position: center;
+				-webkit-object-position: center;
+				-ms-object-position: center;
+				object-position: center;
+				width: 100%;
+			}
+		}
+
+		@include orientation(portrait) {
+			//flex-direction: column-reverse;
+
+			.content {
+				flex-grow: 0;
+				flex-shrink: 0;
+				width: 100%;
+			}
+
+			.image {
+				flex-grow: 0;
+				flex-shrink: 0;
+				margin: 0 0 (_size(element-margin) * 2) 0;
+				height:100%;
+				max-height: 50vh;
+				min-height: 18em;
+				width: 100%;
+			}
+
+			@include breakpoint('<=xsmall') {
+			
+				.image {
+					max-height: 35vh;
+				}
+			}
+		}
+	}
