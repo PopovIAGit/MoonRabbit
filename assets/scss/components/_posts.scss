@@ -17,7 +17,7 @@
 			flex-grow: 0;
 			flex-shrink: 1;
 			flex-basis: 40%;
-			margin: 0 0 $gutter $gutter;
+			margin: 1em 0 $gutter $gutter;
 			position: relative;
 			width: calc(#{(100% / 3)} - #{$gutter});
 

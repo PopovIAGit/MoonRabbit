@@ -366,7 +366,7 @@ button:disabled,
   flex-grow: 0;
   flex-shrink: 1;
   flex-basis: 40%;
-  margin: 0 0 6em 6em;
+  margin: 1em 0 6em 6em;
   position: relative;
   width: calc(33.3333333333% - 6em);
 }
