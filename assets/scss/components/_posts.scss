@@ -16,6 +16,7 @@
 		article {
 			flex-grow: 0;
 			flex-shrink: 1;
+			flex-basis: 40%;
 			margin: 0 0 $gutter $gutter;
 			position: relative;
 			width: calc(#{(100% / 3)} - #{$gutter});
@@ -55,6 +56,8 @@
 					width: 100%;
 				}
 			}
+
+			
 		}
 
 		@include breakpoint('xlarge-to-max') {
@@ -90,7 +93,7 @@
 				width: calc(50% - #{$gutter});
 
 				&:nth-last-child(3) {
-					margin-bottom: $gutter;
+					margin-bottom: 1em;
 				}
 			}
 		}

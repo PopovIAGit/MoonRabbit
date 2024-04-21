@@ -11,8 +11,12 @@
 	input[type="button"],
 	button,
 	.button {
-		background-color: _palette(bg);
+		background-color: _palette(accent);
 		border: 0;
+		text-decoration: none;
+		color: _palette(bg);
+		font-weight: _font(weight-heading);
+		padding: 0.5em 1em 0.5em 1em;
 
 
 		&:hover {
