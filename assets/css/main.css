@@ -135,6 +135,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   line-height: 1.5;
   margin: 0 0 1em 0;
+  text-transform: uppercase;
 }
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
   color: inherit;
@@ -149,7 +150,8 @@ h1 {
 }
 
 h2 {
-  font-size: 1.75em;
+  font-size: 5em;
+  margin: 0;
 }
 
 h3 {
@@ -184,7 +186,7 @@ h6 {
     line-height: 0.8;
   }
   h2 {
-    font-size: 1.5em;
+    font-size: 3em;
   }
 }
 @media screen and (max-width: 480px) {
@@ -365,7 +367,6 @@ button:disabled,
 .posts article {
   flex-grow: 0;
   flex-shrink: 1;
-  flex-basis: 40%;
   margin: 1em 0 6em 6em;
   position: relative;
   width: calc(33.3333333333% - 6em);
@@ -380,6 +381,12 @@ button:disabled,
 .posts article .image img {
   display: block;
   width: 100%;
+}
+.posts article article:has(.mashroom_list) {
+  flex-basis: 45%;
+}
+.posts article article:has(.mashroom_store) {
+  flex-basis: 100%;
 }
 @media screen and (min-width: 1681px) {
   .posts article:nth-child(3n+1):before {
@@ -431,6 +438,7 @@ button:disabled,
   .posts article {
     margin: 0 0 4.5em 4.5em;
     width: calc(50% - 4.5em);
+    flex-basis: 100%;
   }
   .posts article:before {
     height: calc(100% + 4.5em);
@@ -442,6 +450,9 @@ button:disabled,
   }
   .posts article:nth-last-child(3) {
     margin-bottom: 4.5em;
+  }
+  .posts article article:has(.mashroom_list) {
+    flex-basis: 100%;
   }
 }
 @media screen and (max-width: 480px) {
@@ -465,6 +476,9 @@ button:disabled,
   .posts article:last-child:after {
     display: none;
   }
+  .posts article article:has(.mashroom_list) {
+    flex-basis: 100%;
+  }
 }
 
 /* Actions */
@@ -478,6 +492,12 @@ ul.actions {
 ul.actions li {
   padding: 0 0 0 1em;
   vertical-align: middle;
+}
+ul.actions svg {
+  margin-left: 1em;
+}
+ul.actions svg:hover {
+  fill: #00E6E6;
 }
 ul.actions.special {
   justify-content: center;
@@ -525,6 +545,49 @@ ul.actions.fit.stacked {
   max-width: 100%;
   height: 10em;
 }
+.mashroom_store {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin: 1em 0em 1em 0em;
+  text-align: center;
+}
+.mashroom_store li {
+  margin-right: 1em;
+}
+.mashroom_store li:hover h3 {
+  color: #00E6E6;
+}
+.mashroom_store img {
+  margin-right: 1em;
+  max-width: 100%;
+  height: 10em;
+}
+.mashroom_store_revers {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin: 1em 0em 1em 0em;
+  text-align: center;
+}
+.mashroom_store_revers li {
+  margin-right: 1em;
+  padding: 0.5em 1em 0.5em 1em;
+  text-align: center;
+}
+.mashroom_store_revers li h3 {
+  margin: 0;
+}
+.mashroom_store_revers li:hover {
+  background-color: #00E6E6;
+}
+.mashroom_store_revers img {
+  margin-right: 1em;
+  max-width: 100%;
+  height: 10em;
+}
 /* Wrapper */
 #wrapper {
   display: flex;
@@ -547,6 +610,9 @@ ul.actions.fit.stacked {
   padding: 1em 0 0 3em;
   position: relative;
   width: 18em;
+}
+#sidebar .inner .major {
+  margin-left: 1em;
 }
 #sidebar .inner .major #icon img {
   width: 100%;
@@ -831,6 +897,7 @@ ul.actions.fit.stacked {
   display: flex;
   flex-direction: row;
   margin-left: 1.5em;
+  align-items: center;
 }
 #header .header_column .header_column_row .header_column_row_column .circle {
   margin-left: 0.5em;
@@ -963,7 +1030,6 @@ ul.actions.fit.stacked {
 #banner {
   padding: 0;
   display: flex;
-  height: 30em;
   position: relative;
 }
 #banner .title-on-image {
@@ -978,6 +1044,24 @@ ul.actions.fit.stacked {
   flex-shrink: 1;
   width: 100%;
 }
+#banner .store_content {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  justify-content: space-evenly;
+  align-items: stretch;
+  width: 100%;
+  flex-grow: 1;
+  flex-shrink: 1;
+  color: black;
+}
+#banner .store_content h3 {
+  color: black;
+}
+#banner .store_content article {
+  margin: 1em;
+  width: 50%;
+}
 #banner .image {
   flex-grow: 0;
   flex-shrink: 0;
@@ -985,6 +1069,7 @@ ul.actions.fit.stacked {
   margin: 0 0 0 0;
   width: 100%;
   height: 100%;
+  max-height: 30em;
 }
 #banner .image img {
   height: 100%;
@@ -1000,6 +1085,14 @@ ul.actions.fit.stacked {
      object-position: center;
   width: 100%;
 }
+@media screen and (max-width: 736px) {
+  #banner .store_content {
+    flex-direction: column;
+  }
+  #banner .store_content article {
+    width: 90%;
+  }
+}
 @media screen and (orientation: portrait) {
   #banner .content {
     flex-grow: 0;
@@ -1009,7 +1102,7 @@ ul.actions.fit.stacked {
   #banner .image {
     flex-grow: 0;
     flex-shrink: 0;
-    margin: 0 0 4em 0;
+    margin: 0 0 0 0;
     height: 100%;
     max-height: 50vh;
     min-height: 18em;

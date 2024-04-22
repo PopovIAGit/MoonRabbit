@@ -18,6 +18,14 @@
 			vertical-align: middle;
 		}
 
+		svg{
+			margin-left: 1em;
+		}
+
+		svg:hover{
+			fill:  _palette(accent);;
+		}
+
 		&.special {
 			justify-content: center;
 			width: 100%;

@@ -16,32 +16,10 @@
 		article {
 			flex-grow: 0;
 			flex-shrink: 1;
-			flex-basis: 40%;
+	
 			margin: 1em 0 $gutter $gutter;
 			position: relative;
 			width: calc(#{(100% / 3)} - #{$gutter});
-
-			// &:before {
-			// 	background: _palette(border);
-			// 	content: '';
-			// 	display: block;
-			// 	height: calc(100% + #{$gutter});
-			// 	left: ($gutter * -0.5);
-			// 	position: absolute;
-			// 	top: 0;
-			// 	width: 1px;
-			// }
-
-			// &:after {
-			// 	background: _palette(border);
-			// 	bottom: ($gutter * -0.5);
-			// 	content: '';
-			// 	display: block;
-			// 	height: 1px;
-			// 	position: absolute;
-			// 	right: 0;
-			// 	width: calc(100% + #{$gutter});
-			// }
 
 			> :last-child {
 				margin-bottom: 0;
@@ -56,9 +34,18 @@
 					width: 100%;
 				}
 			}
+			article:has(.mashroom_list) {
+				flex-basis: 45%;
+			  }
+
+			  article:has(.mashroom_store) {
+				flex-basis: 100%;
+			  }
 
 			
 		}
+
+
 
 		@include breakpoint('xlarge-to-max') {
 			article {
@@ -133,7 +120,8 @@
 
 			article {
 				margin: 0 0 $gutter $gutter;
-				width: calc(50% - #{$gutter});
+				 width: calc(50% - #{$gutter});
+				 flex-basis: 100%;
 
 				&:before {
 					height: calc(100% + #{$gutter});
@@ -148,6 +136,10 @@
 				&:nth-last-child(3) {
 					margin-bottom: $gutter;
 				}
+
+				article:has(.mashroom_list) {
+					flex-basis: 100%;
+				  }
 			}
 		}
 
@@ -160,6 +152,7 @@
 			article {
 				margin: 0 0 $gutter 0;
 				width: 100%;
+				
 
 				&:before {
 					display: none;
@@ -176,6 +169,10 @@
 						display: none;
 					}
 				}
+
+				article:has(.mashroom_list) {
+					flex-basis: 100%;
+				  }
 			}
 		}
 	}
